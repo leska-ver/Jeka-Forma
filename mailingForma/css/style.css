@@ -1,0 +1,285 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul,
+ol,
+li {
+  last-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body {
+  height: 100%;  
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  background-color: #333;
+}
+
+.form {
+  margin: 0 auto;
+  max-width: 550px;
+  padding: 30px 0;
+  color: #fff;
+}
+
+.form * {
+  outline: none;
+}
+
+.form__body {
+  position: relative;/*Для оповещения что форма удачно отравилась js _sending*/
+}
+/*Для оповещения что форма удачно отравяется js _sending*/
+.form__body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, .9) url("../img/loading.gif") center / 50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .5s ease 0s;
+}
+.form__body._sending::after {
+  opacity: 1;
+  visibility: visible;
+}
+/* // Для оповещения что форма удачно отравяется js _sending*/
+
+.form__title {
+  margin: 0 0 30px 0;
+  font-size: 40px;
+  font-weight: 700;
+}
+.form__item {
+  margin: 0 0 20px 0;
+}
+.form__label {
+  display: block;
+  margin: 0 0 10px 0;
+}
+.form__input {
+  padding: 0 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  transition: all .5s ease 0;
+}
+
+.form__input:focus {
+  box-shadow: 0 0 15px #7a956b;
+}
+.form__input._error {/*Цвет ошибки script.js*/
+  box-shadow: 0 0 15px red;
+}
+
+textarea.form__input {
+  padding: 20px;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.options {
+  padding: 10px 0 0 0;
+}
+.options__item {
+  margin: 0 0 10px 0;
+}
+.optitons__input {
+  display: none;
+}
+
+.optitons__input:checked + .optitons__label::after {
+  transform: scale(1);/*Показали кружок*/
+}
+
+.optitons__label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 140%;  
+  cursor: pointer;
+}
+.optitons__label::before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 24px;
+  margin: 0 10px 0 0;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+.optitons__label::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #7a956b;
+  transform: scale(0);/*Скрыли кружок*/
+  transition: transform .3s ease 0s;
+}
+
+.form__select {/*Не удалять! Это вместе Жекина файла select.css*/
+  padding: 0 20px;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+}
+
+.file {
+}
+.file {
+}
+.file__item {
+  position: relative;
+}
+.file__input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  font-size: 0;
+  cursor: pointer;
+}
+.file__button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 30px;
+  min-height: 40px;  
+  background-color: #77608d;  
+}
+.file__preview {
+  display: inline-block;
+  padding: 10px 0 0 0;
+  max-width: 100px;
+}
+.file__preview img {
+  max-width: 100%;
+}
+.checkbox {
+}
+.checkbox._error .checkbox__label:before {/*Цвет ошибки script.js*/
+  box-shadow: 0 0 15px red;
+}
+.checkbox__input {
+  display: none;
+}
+.checkbox__input:checked + .checkbox__label::after {
+  transform: scale(1);/*Открыли Квадрат*/
+}
+.checkbox__label {
+  position: relative;
+  font-size: 16px;
+  line-height: 140%;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.checkbox__label:before {
+  content: "";
+  align-self: flex-start;
+  flex: 0 0 24px;
+  margin: 0 10px 0 0;
+  border-radius: 4px;
+  height: 24px;
+  background-color: #fff;  
+}
+.checkbox__label:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 4px; 
+  width: 16px;
+  height: 16px;
+  background-color: #7a956b; 
+  transform: scale(0);/*Скрыли Квадрат*/
+  transition: transform .5s ease 0s;
+}
+
+.checkbox__label a {
+  color: #7a956b;  
+}
+
+.form__button {
+  position: rerlative;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  border-radius: 20px;
+  box-shadow: 0 5px 0 #161b13;
+  width: 100%;
+  min-height: 60px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #7a956b;  
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;  
+  transition: background-color .5s ease 0s;
+}
+.form__button:hover {
+  background-color: #4f6146;
+}
+.form__button:active {
+  top: 3;
+  box-shadow: 0 2px 0 #161b13;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

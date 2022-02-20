@@ -1,0 +1,9 @@
+Видео урока - https://www.youtube.com/watch?v=PqTrhfjLQBI&t=906s
+---
+1.У селекта он подключил файлы select.css(его с видео переписала) и select.js(отправил парен, но он глучит). Я просто взяла с Githuba https://github.com/Choices-js/Choices - Плагин choices.js для select. Скачать его библиотеку и взять из public/assets/scripts/choices.min.js и также взять из public/assets/styles/choices.min.css
+---
+2.https://github.com/PHPMailer/PHPMailer - для отправки формы используем плагин PHPMailer -> В разделе Releases жмём PHPMailer 6.5.4 -> Source code (zip). Папку переименовала в phpmailer
+---
+3. Создала файл sendmail.php, она для отправке писем
+--- 
+4. Создаём папку files, в ней будет собираться изображения
