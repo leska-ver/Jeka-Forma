@@ -16,7 +16,7 @@ $mail->setFrom('info@fls.guru', 'От клиента из сайта ФОТОГ�
 //Кому отправить
 $mail->addAddress('lyaisan.333@yandex.ru');
 //Тема письма
-$mail->Subject = 'Привет! Это "Фрилансер по жизни"';
+$mail->Subject = 'Привет! Это "Клиент из сайта https://shopping.com"';
 
 //Рука
 $hand = "Правая";
@@ -54,7 +54,6 @@ if (!empty($_FILES['image']['tmp_name'])) {
       $mail->addAttachment($fileAttach);
   }
 }
-
 
   $mail->Body = $body;
 
