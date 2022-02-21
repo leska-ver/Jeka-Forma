@@ -20,26 +20,26 @@ $mail->Subject = 'Привет! Это "Фрилансер по жизни"';
 //Рука
 $hand = "Правая";
 if($_POST['hand'] == "left") {
-$hand = "Левая";
+  $hand = "Левая";
 }
 
 //Тело письма
 $body = '<h1>Встречай супер письмо!</h1>';
 
 if(trim(!empty($_POST['name']))){
-$body.='<p><strong>Имя:</strong> '.$_POST['name'].'</p>';
+  $body.='<p><strong>Имя:</strong> '.$_POST['name'].'</p>';
 }
 if(trim(!empty($_POST['email']))){
-$body.='<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
+  $body.='<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
 }
 if(trim(!empty($_POST['hand']))){
-$body.='<p><strong>Рука:</strong> '.$_POST['hand'].'</p>';
+  $body.='<p><strong>Рука:</strong> '.$hand.'</p>';
 }
 if(trim(!empty($_POST['age']))){
-$body.='<p><strong>Возраст:</strong> '.$_POST['age'].'</p>';
+  $body.='<p><strong>Возраст:</strong> '.$_POST['age'].'</p>';
 }
 if(trim(!empty($_POST['message']))){
-$body.='<p><strong>Сообщение:</strong> '.$_POST['message'].'</p>';
+  $body.='<p><strong>Сообщение:</strong> '.$_POST['message'].'</p>';
 }
 
 //Прикрепить файл
@@ -49,7 +49,7 @@ if (!empty($_FILES['image']['tmp_name'])) {
   //грузим файл
   if (copy($_FILES['image']['tmp_name'], $filePath)){
     $fileAttach = $filePath;
-    $body.='<p><strong>Фото в приложении</strong></p>';
+    $body.='<p><strong>Фото в приложении</strong>';
       $mail->addAttachment($fileAttach);
   }
 }
@@ -69,3 +69,4 @@ if (!empty($_FILES['image']['tmp_name'])) {
 
   header('Content-type: application/json');
   echo json_encode($response);
+  ?>
