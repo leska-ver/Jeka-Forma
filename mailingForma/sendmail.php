@@ -1,19 +1,20 @@
 <?php
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer/php';
+require 'phpmailer/src/PHPMailer.php';
 
 $mail = new PHPMailer(true);
-$mail->Charset = 'UTF-8';
+$mail->CharSet = 'UTF-8';
 $mail->setLanguage('ru', 'phpmailer/language/');
 $mail->IsHTML(true);
 
 //От кого письмо
 $mail->setFrom('info@fls.guru', 'От клиента из сайта ФОТОГРАФ');
 //Кому отправить
-$mail->addAddress('test-sj8sgsyyx@srv1.mail-tester.com');
+$mail->addAddress('lyaisan.333@yandex.ru');
 //Тема письма
 $mail->Subject = 'Привет! Это "Фрилансер по жизни"';
 
@@ -49,7 +50,7 @@ if (!empty($_FILES['image']['tmp_name'])) {
   //грузим файл
   if (copy($_FILES['image']['tmp_name'], $filePath)){
     $fileAttach = $filePath;
-    $body.='<p><strong>Фото в приложении</strong>';
+    $body.='<p><strong>Фото в приложении</strong></p>';
       $mail->addAttachment($fileAttach);
   }
 }

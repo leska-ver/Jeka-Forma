@@ -1,6 +1,6 @@
 "use strict"
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('form');
   form.addEventListener('submit', formSend);//Теперь за нажатие кнопки отвечает js
 
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
         let result = await response.json();
         alert(result.message);
         formPreview.innerHTML = '';
-        form.reset();
-        form.classList.remove('_sending');
+        form.reset();   
+        form.classList.remove('_sending');     
       } else {
           alert("Ошибка");
           form.classList.remove('_sending');
@@ -33,14 +33,6 @@ document.addEventListener('DOMContentLoaded', function() {
       alert('Заполните обязательные поля')
     }
     // -//- Для отправки формы
-
-    //Модальное окно 
-    if (error === 0) {
-
-    }else {
-      alert('Запольните обязательные поля');
-    }
-    // -//- Модальное окно 
   }
 
   function formValidate(form) {
@@ -59,8 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }else if (input.getAttribute("type") === "checkbox" && input.checked === false) {//.checkbox._error .checkbox__label:before css Цвет ошибки
         formAddError(input);
           error++;
-      }
-      else {
+      } else {
         if (input.value === '') {
           formAddError(input);
           error++;
