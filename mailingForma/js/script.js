@@ -92,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     //Проверим размер файла (<2 Mb)
-    if (file.size > 2 * 1024 * 1024) {
-      alert('Файл должен быть менее 2 Mb.');
+    if (file.size > 700 * 1024 * 1024) {
+      alert('Файл должен быть менее 700 Mb.');
       return;
     }
 
