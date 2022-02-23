@@ -14,7 +14,7 @@ $mail->IsHTML(true);
 //От кого письмо
 $mail->setFrom('info@fls.guru', 'От клиента из сайта ФОТОГРАФ');
 //Кому отправить
-$mail->addAddress('lyaisan.333@yandex.ru');
+$mail->addAddress('lyly.@yandex.ru');/*Здесь ставим адрес клиента*/
 //Тема письма
 $mail->Subject = 'Привет! Это "Клиент из сайта https://shopping.com"';
 
